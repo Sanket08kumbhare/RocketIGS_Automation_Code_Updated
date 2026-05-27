@@ -1,0 +1,20 @@
+[
+  {
+    "role": "Super Admin",
+    "email": "shrihari.gawande@harriersys.com",
+    "password": "Harrier@2025",
+    "expectedURL": "https://uat-rocketigs.harrier.digital/dashboard"
+  },
+  {
+    "role": "Company Admin",
+    "email": "jerry.thomson@mailinator.com",
+    "password": "Test@123",
+    "expectedURL": "https://uat-rocketigs.harrier.digital/brookefield-automation/dashboard"
+  },
+  {
+    "role": "Free User",
+    "email": "emily.watson@mailinator.com",
+    "password": "Test@123",
+    "expectedURL": "https://uat-rocketigs.harrier.digital/brookefield-automation/dashboard"
+  }
+]

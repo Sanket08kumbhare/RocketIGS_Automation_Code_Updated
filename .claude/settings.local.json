@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"d:\\\\Sanket\\\\PlaywrightAutomation\" status)",
+      "PowerShell(Get-ChildItem -Path \"$env:APPDATA\\\\Code\\\\User\\\\History\" -Recurse | Where-Object { $_.Name -match \"spec\" } | Select-Object FullName, LastWriteTime)",
+      "PowerShell(Get-ChildItem -Path \"$env:APPDATA\\\\Code\\\\User\\\\History\" -Directory | Select-Object -First 5 | ForEach-Object { Get-ChildItem $_.FullName | Select-Object FullName })",
+      "PowerShell(Get-ChildItem -Path \"$env:APPDATA\\\\Code\\\\User\\\\History\" -Recurse | Measure-Object | Select-Object Count)",
+      "PowerShell(Get-ChildItem -Path \"$env:APPDATA\\\\Code\\\\User\\\\History\\\\14aea446\" -Force | ForEach-Object { \"$\\($_.Name\\) - $\\($_.LastWriteTime\\)\" }; Write-Host \"---\"; Get-ChildItem -Path \"$env:APPDATA\\\\Code\\\\User\\\\History\\\\5a8ee5ef\" -Force | ForEach-Object { \"$\\($_.Name\\) - $\\($_.LastWriteTime\\)\" })",
+      "PowerShell(Get-Content \"$env:APPDATA\\\\Code\\\\User\\\\History\\\\14aea446\\\\entries.json\"; Write-Host \"---\"; Get-Content \"$env:APPDATA\\\\Code\\\\User\\\\History\\\\5a8ee5ef\\\\entries.json\")"
+    ]
+  }
+}
