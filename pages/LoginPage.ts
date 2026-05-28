@@ -20,7 +20,7 @@ export class LoginPage {
     await this.emailInput.fill(email);
     await this.passwordInput.fill(password);
     await this.loginButton.click();
-    await this.page.waitForTimeout(3000);
+    await this.page.waitForURL('**/dashboard');
     await this.page.screenshot({path: `screenshots/login-${email}.png`});
   }
 }
