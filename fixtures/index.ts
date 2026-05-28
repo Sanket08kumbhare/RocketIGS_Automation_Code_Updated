@@ -3,6 +3,8 @@ import { test as base, expect, Page } from '@playwright/test';
 type LoginFixtures = {
   loginAsAdmin: () => Promise<void>;
   loginAsCompanyUser: () => Promise<void>;
+  loginAsFreeUser: () => Promise<void>;
+  loginAsDennis: () => Promise<void>;
 };
 
 export const test = base.extend<LoginFixtures>({
@@ -33,6 +35,26 @@ export const test = base.extend<LoginFixtures>({
       await page.waitForURL('https://uat-rocketigs.harrier.digital/globex/dashboard');
     });
   },
+
+  loginAsFreeUser: async ({ page }, use) => {
+    await use(async () => {
+      await page.goto('https://uat-rocketigs.harrier.digital/sign-in');
+      await page.getByPlaceholder('email').fill('lauren.adam@mailinator.com');
+      await page.locator('#password').fill('Test@123');
+      await page.getByRole('button', { name: 'Initiate Access' }).click();
+      await page.waitForURL('https://uat-rocketigs.harrier.digital/globex/dashboard');
+    });
+  },
+loginAsDennis: async ({ page }, use) => {
+    await use(async () => {
+      await page.goto('https://uat-rocketigs.harrier.digital/sign-in');
+      await page.getByPlaceholder('email').fill('heather.dennis@mailinator.com');
+      await page.locator('#password').fill('Test@123');
+      await page.getByRole('button', { name: 'Initiate Access' }).click();
+      await page.waitForURL('https://uat-rocketigs.harrier.digital/globex/dashboard');
+    });
+  },
+
 });
 
 export { expect } from '@playwright/test';

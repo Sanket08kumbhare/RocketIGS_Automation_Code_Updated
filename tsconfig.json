@@ -7,5 +7,5 @@
     "resolveJsonModule": true,
     "types": ["node"]
   },
-  "include": ["tests/**/*", "pages/**/*", "data/**/*"]
+  "include": ["tests/**/*", "pages/**/*", "data/**/*", "fixtures/**/*"]
 }
