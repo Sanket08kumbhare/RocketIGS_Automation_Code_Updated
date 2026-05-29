@@ -5,6 +5,7 @@ type LoginFixtures = {
   loginAsCompanyUser: () => Promise<void>;
   loginAsFreeUser: () => Promise<void>;
   loginAsDennis: () => Promise<void>;
+  loginAsHenryKelly: () => Promise<void>;
 };
 
 export const test = base.extend<LoginFixtures>({
@@ -49,6 +50,16 @@ loginAsDennis: async ({ page }, use) => {
     await use(async () => {
       await page.goto('https://uat-rocketigs.harrier.digital/sign-in');
       await page.getByPlaceholder('email').fill('heather.dennis@mailinator.com');
+      await page.locator('#password').fill('Test@123');
+      await page.getByRole('button', { name: 'Initiate Access' }).click();
+      await page.waitForURL('https://uat-rocketigs.harrier.digital/globex/dashboard');
+    });
+  },
+
+  loginAsHenryKelly: async ({ page }, use) => {
+    await use(async () => {
+      await page.goto('https://uat-rocketigs.harrier.digital/sign-in');
+      await page.getByPlaceholder('email').fill('kelly.henry@mailinator.com');
       await page.locator('#password').fill('Test@123');
       await page.getByRole('button', { name: 'Initiate Access' }).click();
       await page.waitForURL('https://uat-rocketigs.harrier.digital/globex/dashboard');
