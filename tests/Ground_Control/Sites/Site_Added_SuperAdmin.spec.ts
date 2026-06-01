@@ -10,7 +10,7 @@ test('SuperAdmin:Create a new site and verify it appears in the list of Sites', 
     await page.getByRole('button', {name: 'Sites'}).click();
     await expect(page).toHaveURL('https://uat-rocketigs.harrier.digital/globex/sites');
     await page.getByRole('button', {name: ' Add'}).click();
-    await page.getByPlaceholder('Enter Site Name').fill('Steinhardt');
+    await page.getByPlaceholder('Enter Site Name').fill('Sample Site');
     await page.getByPlaceholder('Enter name of Contact Person').fill('Henry Kelly');
     await page.getByPlaceholder('Enter Email Address').fill('kelly.henry@mailinator.com');
     await page.getByPlaceholder('Enter Phone Number').fill('6498210348');
