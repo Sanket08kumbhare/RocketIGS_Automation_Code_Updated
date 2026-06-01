@@ -22,9 +22,4 @@ test('Create a new site and verify it appears in the list of Sites', async({page
     await page.screenshot({path: 'site_creation.png', fullPage: true});
     await expect(page).toHaveURL('https://uat-rocketigs.harrier.digital/globex/sites');
 
-
-
-
-
-
 })
