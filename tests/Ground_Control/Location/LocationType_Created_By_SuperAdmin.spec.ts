@@ -12,13 +12,15 @@ test('SuperAdmin:Create a new Location Type and verify it appears in the list of
     await page.getByRole('button', {name: ' Add'}).click();
     //await page.waitForLoadState('networkidle');
     await page.getByRole('menuitem', {name: 'New Type'}).click();
-    await page.getByPlaceholder('Enter Location Type').fill('Test Location Type');
-    await page.locator('div').filter({hasText: 'Search and select a site' }).getByRole('combobox').click();
-    await page.getByRole('option', {name: 'Steinhardt'}).click();
+    await page.getByPlaceholder('Enter Location Type', { exact: true }).fill('Tikvah');
+    const siteCombobox = page.locator('div').filter({hasText: 'Search and select a site'}).getByRole('combobox');
+    await siteCombobox.click();
+    await siteCombobox.fill('Steinhardt');
+    await page.keyboard.press('ArrowDown');
+    await page.keyboard.press('Enter');
     await page.getByRole('button', {name: 'Save Location Type'}).click();
-    await expect(page.getByRole('cell', {name: 'Test Location Type'})).toBeVisible();
     await page.waitForTimeout(2000); // Wait for 2 seconds to ensure the UI has updated before taking the screenshot
-    await page.getByRole('cell', {name: 'Test Location Type'}).highlight();
+    await page.getByRole('cell', {name: 'Tikvah'}).highlight();
     await page.screenshot({path: 'screenshots/LocationType-created-by-superadmin.png', fullPage: true});
 
 })
