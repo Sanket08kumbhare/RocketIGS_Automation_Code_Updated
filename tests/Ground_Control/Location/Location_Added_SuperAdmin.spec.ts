@@ -12,7 +12,7 @@ test('SuperAdmin:Create a new Location and verify it appears in the list of Loca
     await page.getByRole('button', {name: ' Add'}).click();
     //await page.waitForLoadState('networkidle');
     await page.getByRole('menuitem', {name: 'New Location'}).click();
-    await page.getByPlaceholder('Enter Location Name').fill('Othmer Hall');
+    await page.getByPlaceholder('Enter Location Name').fill('Sample Location');
 
     const siteSelect = page.locator('.ant-select').filter({hasText: 'Search and select a site'});
     await siteSelect.click();
