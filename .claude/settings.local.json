@@ -9,7 +9,8 @@
       "PowerShell(Get-Content \"$env:APPDATA\\\\Code\\\\User\\\\History\\\\14aea446\\\\entries.json\"; Write-Host \"---\"; Get-Content \"$env:APPDATA\\\\Code\\\\User\\\\History\\\\5a8ee5ef\\\\entries.json\")",
       "Bash(Get-ChildItem -Path \"d:\\\\Sanket\\\\PlaywrightAutomation\" -Recurse -Directory)",
       "Bash(Select-Object -ExpandProperty FullName)",
-      "Bash(Sort-Object)"
+      "Bash(Sort-Object)",
+      "Bash(npx playwright *)"
     ]
   }
 }
